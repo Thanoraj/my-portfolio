@@ -25,7 +25,7 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
               alt={"Thanoraj Portrait"}
               width={192}
               height={192}
-              className="h-40 w-40 object-cover rounded-full border-4 border-gray-300 shadow-xl"></Image>
+              className="h-40 w-40 object-cover rounded-full shadow-xl"></Image>
           </motion.div>
           <motion.span
             className="absolute text-4xl bottom-2 right-2"
@@ -52,7 +52,7 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
           {data.p4}
           <span className="font-bold">{data.p5}</span>
           {data.p6}
-          <span className="italic font-bold">{data.p7}</span>
+          <span className="font-bold">{data.p7}</span>
         </p>
       </motion.h1>
       <motion.div
@@ -60,9 +60,7 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
         className="flex flex-col sm:flex-row items-center gap-5 justify-center mt-5">
-        <Link
-          href={"#contact"}
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 justify-center rounded-full w-fit hover:scale-110 hover:bg-gray-950 transition active:scale-105">
+        <Link href={"#contact"} className="group primary-button">
           Contact Me{" "}
           <BsArrowRight className="opacity-80 group-hover:translate-x-1 transition" />
         </Link>

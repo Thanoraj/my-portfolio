@@ -18,7 +18,7 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
       />
       <div className="p-5">
         <h3
-          className="text-2xl font-semibold mb-3 h-[1.8rem] max-h-[1.8rem] overflow-hidden text-ellipsis whitespace-nowrap leading-none"
+          className="text-2xl text-left font-semibold mb-3 h-[1.8rem] max-h-[1.8rem] overflow-hidden text-ellipsis whitespace-nowrap leading-none"
           style={{ fontSize: "clamp(1rem, 2vw, 1.5rem)" }}
           title={data.name} // This will show the full text as a native tooltip
         >
