@@ -34,23 +34,21 @@ const ContactSection = () => {
         }}
         whileInView={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
         viewport={{ once: true }}
-        action={(formData) => {
-          console.log(formData.get("senderEmail"));
-          console.log(formData.get("message"));
-          sendEmail(formData);
+        action={async (formData) => {
+          await sendEmail(formData);
         }}>
         <input
           name="senderEmail"
           type="email"
           className="my-4 border rounded-[10px] h-14 px-3"
-          placeholder="Your email"
+          placeholder="Email"
           required
         />
 
         <textarea
           name="message"
           className="border rounded-[10px] my-4 h-52 px-3 py-3"
-          placeholder="Your message"
+          placeholder="Message"
           required
         />
 

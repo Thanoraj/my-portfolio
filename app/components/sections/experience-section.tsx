@@ -30,6 +30,7 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
               boxShadow: "none",
               textAlign: "left",
               left: "-140px",
+              borderRadius: "15px",
             }}
             style={{
               width: "1000px",
@@ -40,10 +41,12 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
               margin: "0 500px 0 0",
               left: index % 2 === 0 ? "440px" : "-514px",
             }}
+            dateClassName="italic"
             date={experience.date}
             icon={experience.icon}
             iconStyle={{
               left: "360px",
+              background: "#f3f4f6",
             }}
             // iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           >
