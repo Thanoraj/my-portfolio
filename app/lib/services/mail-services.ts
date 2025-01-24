@@ -1,7 +1,8 @@
 "use server";
 
 import { ReactElement } from "react";
-// @ts-expect-error: Type annotation not available
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: No type definition
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
