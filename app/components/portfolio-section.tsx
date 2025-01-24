@@ -4,16 +4,19 @@ import React, { useContext, useEffect } from "react";
 import { ActiveSectionContext } from "../context/active-section";
 import { SectionName } from "../types/custom-types";
 import { useRef } from "react";
+import clsx from "clsx";
 
 type PortfolioSectionProps = {
   id: SectionName;
   children: React.ReactNode;
   maxWidth?: string;
+  className?: string;
 };
 const PortfolioSection = ({
   id,
   children,
   maxWidth = "50rem",
+  className = "",
 }: PortfolioSectionProps) => {
   const sectionRef = useRef(null); // Reference for the section element
   const { setActiveSection } = useContext(ActiveSectionContext)!;
@@ -23,6 +26,7 @@ const PortfolioSection = ({
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
+
         if (entry.intersectionRatio >= 0.5) {
           console.log("Entered to screen", id);
           setActiveSection(id); // Set true if 80% or more of the section is visible
@@ -50,7 +54,10 @@ const PortfolioSection = ({
     <section
       ref={sectionRef}
       id={id.replace("#", "")}
-      className={`min-h-screen flex items-center flex-col justify-center text-center`}
+      className={clsx(
+        `min-h-screen flex items-center flex-col justify-center text-center`,
+        className
+      )}
       style={{ maxWidth: maxWidth }}>
       {children}
     </section>

@@ -1,4 +1,8 @@
+import { CgWorkAlt } from "react-icons/cg";
 import { ProjectData } from "../types/project-data";
+import React from "react";
+import { Experience } from "../types/experience";
+import { LuGraduationCap } from "react-icons/lu";
 
 export type route = {
   name: string;
@@ -14,10 +18,10 @@ export const routes = [
     name: "About",
     hash: "#about",
   },
-  // {
-  //   name: "Experience",
-  //   hash: "#experience",
-  // },
+  {
+    name: "Experience",
+    hash: "#experience",
+  },
   {
     name: "Projects",
     hash: "#projects",
@@ -26,10 +30,10 @@ export const routes = [
     name: "Skills",
     hash: "#skills",
   },
-  // {
-  //   name: "Contact",
-  //   hash: "#contact",
-  // },
+  {
+    name: "Contact",
+    hash: "#contact",
+  },
 ] as const;
 
 const myData = {
@@ -289,6 +293,39 @@ const skills = {
   databases: ["SQL", "MySQL", "MongoDB", "Firebase"],
 };
 
+const experiences: { experience: Experience[] } = {
+  experience: [
+    {
+      jobTitle: "AI R&D Full-stack Engineer",
+      company: "Flipick [Pune, India]",
+      desc: "Developed GenAI applications for B2B products, including an AI-assisted slide editing tool.",
+      date: "April 2023 - Dec 2024",
+      icon: React.createElement(CgWorkAlt),
+    },
+    {
+      jobTitle: "Intern Software Engineer",
+      company: "Ed-Eureka [Colombo, Sri Lanka]",
+      desc: "Contributed to the development of full-stack web applications using Flutter, React, and Node.js.",
+      date: "March 2022 – April 2023",
+      icon: React.createElement(CgWorkAlt),
+    },
+    {
+      jobTitle: "B.Sc in Engineering (Hons)",
+      company: "University of Peradeniya [Kandy, Sri Lanka]",
+      desc: "Specialized in Electrical and Electronic Engineering",
+      date: "Dec 2019 – Aug 2024",
+      icon: React.createElement(LuGraduationCap),
+    },
+    {
+      jobTitle: "GCE Advance Level",
+      company: "Jaffna Hindu College [Jaffna, Sri Lanka]",
+      desc: "Physical Science Stream",
+      date: "Jan 2010 - Aug 2018",
+      icon: React.createElement(LuGraduationCap),
+    },
+  ],
+};
+
 export const sectionsData = {
   my_data: myData,
   intro: {
@@ -302,5 +339,8 @@ export const sectionsData = {
   },
   skills: {
     data: skills,
+  },
+  experience: {
+    data: experiences,
   },
 };
