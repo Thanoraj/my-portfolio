@@ -7,6 +7,8 @@ import { initDB } from "./lib/configs/init-db";
 import ActiveSectionContextProvider from "./context/active-section";
 
 const lato = Lato({
+  subsets: ["latin"],
+
   weight: ["400", "700", "900"],
 });
 const geistMono = Geist_Mono({
