@@ -69,7 +69,7 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
           download={true}
           target="_blank"
           rel="noopener noreferrer"
-          className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 justify-center rounded-full w-fit border border-black/10 hover:scale-110 transition active:scale-105">
+          className="group px-7 py-3 secondary-button">
           Download CV
           <HiDownload className="opacity-80 group-hover:translate-x-1 transition" />
         </a>
@@ -77,14 +77,14 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
           href="https://www.linkedin.com/in/muthulingamthanoraj/"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white text-gray-900 p-4 flex items-center gap-2 justify-center rounded-full w-fit border border-black/10 hover:scale-110 transition active:scale-105">
+          className="secondary-button !p-4">
           <BsLinkedin />
         </a>
         <a
           href="https://github.com/Thanoraj"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white text-gray-900 p-4 flex items-center gap-2 justify-center rounded-full w-fit border border-black/10 hover:scale-110 transition active:scale-105">
+          className="secondary-button !p-4">
           <BsGithub />
         </a>
       </motion.div>
