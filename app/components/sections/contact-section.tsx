@@ -12,7 +12,7 @@ const ContactSection = () => {
     <PortfolioSection id={"#contact"} className="w-[min(100%, 38rem)]  mx-4">
       <SectionTitle>Contact Me</SectionTitle>
       <motion.p
-        className="-mt-6"
+        className="-mt-6 text-gray-900 dark:text-gray-100"
         initial={{
           y: 100,
           opacity: 0,
@@ -40,14 +40,14 @@ const ContactSection = () => {
         <input
           name="senderEmail"
           type="email"
-          className="my-4 border rounded-[10px] h-14 px-3"
+          className="my-4 border rounded-[10px] h-14 px-3 dark:bg-white dark:bg-opacity-10"
           placeholder="Email"
           required
         />
 
         <textarea
           name="message"
-          className="border rounded-[10px] my-4 h-52 px-3 py-3"
+          className="border rounded-[10px] my-4 h-52 px-3 py-3 dark:bg-white dark:bg-opacity-10"
           placeholder="Message"
           required
         />

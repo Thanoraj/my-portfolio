@@ -19,8 +19,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.dribbble.com",
       },
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+      },
     ],
-    domains: ["firebasestorage.googleapis.com", "https://picsum.photos"],
   },
 };
 

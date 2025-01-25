@@ -20,7 +20,9 @@ const SkillsSection = ({ data }: SkillsSectionProps) => {
           <motion.div
             className={clsx(
               "border-2 border-black-100 px-3 rounded-full cursor-pointer",
-              selectedSkill === skill ? "bg-blue-100" : "hover:bg-blue-50",
+              selectedSkill === skill
+                ? "bg-blue-100 dark:bg-sky-900"
+                : "hover:bg-blue-50 dark:hover:bg-sky-950",
               !data[skill.toLocaleLowerCase()]
                 ? "pointer-events-none cursor-auto"
                 : ""
@@ -49,7 +51,7 @@ const SkillsSection = ({ data }: SkillsSectionProps) => {
       <div className="flex flex-wrap gap-2 w-full">
         {(data[selectedSkill.toLowerCase()] ?? []).map((skill, index) => (
           <motion.div
-            className="border-2 border-black-100 px-3 rounded-full"
+            className="border-2 px-3 rounded-full"
             key={index}
             initial={{
               opacity: 0,
