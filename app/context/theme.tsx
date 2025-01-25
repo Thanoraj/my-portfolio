@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Theme } from "../types/custom-types";
 
 type ThemeContextType = {
@@ -15,12 +15,15 @@ type ThemeContextProviderProps = {
 };
 
 const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
-  const [theme, setTheme] = useState<Theme>(
-    (window.localStorage.getItem("theme") ??
-      (window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light")) as Theme
-  );
+  const [theme, setTheme] = useState<Theme>("dark");
+  useEffect(() => {
+    setTheme(
+      (window.localStorage.getItem("theme") ??
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light")) as Theme
+    );
+  }, []);
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
