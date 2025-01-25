@@ -17,12 +17,16 @@ type ThemeContextProviderProps = {
 const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
   const [theme, setTheme] = useState<Theme>("dark");
   useEffect(() => {
-    setTheme(
-      (window.localStorage.getItem("theme") ??
-        (window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light")) as Theme
-    );
+    const theme =
+      window.localStorage.getItem("theme") ??
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+    setTheme(theme as Theme);
+
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    }
   }, []);
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

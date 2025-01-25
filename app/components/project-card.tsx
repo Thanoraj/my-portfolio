@@ -40,7 +40,7 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
           {data.keywords.map((keyword, index) => (
             <li
               key={index}
-              className="bg-gray-50 dark:bg-transparent px-4 py-1 rounded-full text-sm border-2 border-gray-300">
+              className="bg-gray-50 dark:bg-transparent px-4 py-1 rounded-full text-sm border border-gray-300">
               {keyword}
             </li>
           ))}
