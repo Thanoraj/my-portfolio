@@ -13,7 +13,7 @@ export default async function Home() {
   const sections = sectionsData; // await getMyInfo();
 
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center px-2 sm:px-0">
       <IntroSection
         myData={sections.my_data}
         data={sections.intro.data as Record<string, string>}

@@ -9,7 +9,7 @@ type AboutSectionProps = {
 };
 const AboutSection = ({ data }: AboutSectionProps) => {
   return (
-    <PortfolioSection id="#about">
+    <PortfolioSection id="#about" className="px-4">
       <SectionTitle>About me</SectionTitle>
       <motion.p
         className="font-medium"

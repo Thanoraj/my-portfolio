@@ -13,9 +13,9 @@ type IntroSectionProps = {
 };
 const IntroSection = ({ myData, data }: IntroSectionProps) => {
   return (
-    <PortfolioSection id="#home">
-      <div className="flex items-center justify-center">
-        <div className="relative">
+    <PortfolioSection id="#home" className="px-4">
+      <div className="flex flex-col items-center sm:flex-row sm:items-start gap-6 sm:gap-8">
+        <div className="relative mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -40,21 +40,21 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
             👋
           </motion.span>
         </div>
+        <motion.h1
+          className="font-medium text-2xl text-center sm:text-left"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}>
+          <p className="font-bold text-3xl my-8">{data.p1}</p>
+          <p>
+            {data.p2}
+            <span className="font-bold">{data.p3}</span>
+            {data.p4}
+            <span className="font-bold">{data.p5}</span>
+            {data.p6}
+            <span className="font-bold">{data.p7}</span>
+          </p>
+        </motion.h1>
       </div>
-      <motion.h1
-        className="font-medium text-2xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}>
-        <p className="font-bold text-3xl my-8">{data.p1}</p>
-        <p>
-          {data.p2}
-          <span className="font-bold">{data.p3}</span>
-          {data.p4}
-          <span className="font-bold">{data.p5}</span>
-          {data.p6}
-          <span className="font-bold">{data.p7}</span>
-        </p>
-      </motion.h1>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}

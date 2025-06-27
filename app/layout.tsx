@@ -33,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="google-site-verification"
           content="wh27ZUsn1uIf_GnrLVDe1F_WK31v6hpO7MtdV9SZEow"

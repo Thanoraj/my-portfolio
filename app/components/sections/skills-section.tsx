@@ -12,7 +12,7 @@ const SkillsSection = ({ data }: SkillsSectionProps) => {
   const [selectedSkill, setSelectedSkill] = useState("All");
 
   return (
-    <PortfolioSection id={"#skills"}>
+    <PortfolioSection id={"#skills"} className="px-4">
       <SectionTitle>Skills</SectionTitle>
       <h3 className="text-left w-full py-2 text-xl">Core </h3>
       <div className="flex flex-wrap gap-2  w-full">
