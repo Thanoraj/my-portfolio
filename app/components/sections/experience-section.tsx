@@ -23,7 +23,7 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
   return (
     <PortfolioSection
       id={"#experience"}
-      className="pt-28 w-[80%]"
+      className="pt-28 px-4 w-full sm:w-[80%]"
       maxWidth="100%">
       <SectionTitle>Experiences</SectionTitle>
       <VerticalTimeline lineColor="#f3f4f6">

@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="z-[999] relative">
       <motion.div
-        className="flex fixed top-0 rounded-none border border-white dark:border-black/40 border-opacity-40 bg-gray-50 dark:bg-gray-950 bg-opacity-80 dark:bg-opacity-75 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6  sm:rounded-full left-1/2"
+        className="flex fixed top-0 left-1/2 w-[95%] sm:w-max px-2 sm:px-0 rounded-none border border-white dark:border-black/40 border-opacity-40 bg-gray-50 dark:bg-gray-950 bg-opacity-80 dark:bg-opacity-75 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:rounded-full"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}>
         <nav className="">
