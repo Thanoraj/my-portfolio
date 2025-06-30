@@ -4,9 +4,33 @@
 
 
 .primary-button {
-    @apply bg-gray-900 dark:bg-gray-100 text-white dark:text-black px-7 py-3 flex items-center gap-2 justify-center rounded-full w-fit hover:scale-110 hover:bg-gray-950 dark:hover:bg-gray-50 transition active:scale-105;
+    @apply bg-gray-900 dark:bg-gray-100 text-white dark:text-black px-6 py-3 sm:px-7 sm:py-3 flex items-center gap-2 justify-center rounded-full w-fit hover:scale-110 hover:bg-gray-950 dark:hover:bg-gray-50 transition active:scale-105 text-sm sm:text-base min-h-[44px];
 }
 
 .secondary-button {
-    @apply bg-white dark:bg-black/50 text-gray-900 dark:text-gray-100 px-7 py-3 flex items-center gap-2 justify-center rounded-full w-fit border border-black/10 dark:border-white/15 hover:scale-110 transition active:scale-105
+    @apply bg-white dark:bg-black/50 text-gray-900 dark:text-gray-100 px-6 py-3 sm:px-7 sm:py-3 flex items-center gap-2 justify-center rounded-full w-fit border border-black/10 dark:border-white/15 hover:scale-110 transition active:scale-105 text-sm sm:text-base min-h-[44px];
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+/* Smooth horizontal scrolling */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Scroll snap for better mobile experience */
+.scroll-snap-x {
+    scroll-snap-type: x mandatory;
+}
+
+.scroll-snap-start {
+    scroll-snap-align: start;
 }

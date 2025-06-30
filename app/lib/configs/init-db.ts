@@ -17,9 +17,23 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
 };
 
-const app: FirebaseApp = initializeApp(firebaseConfig);
+let app: FirebaseApp | null = null;
 
-export const initDB = async () => {
+export const initDB = () => {
+  if (!app) {
+    try {
+      app = initializeApp(firebaseConfig);
+    } catch (error) {
+      console.error("Failed to initialize Firebase:", error);
+    }
+  }
+  return app;
+};
+
+export const getFirebaseApp = () => {
+  if (!app) {
+    return initDB();
+  }
   return app;
 };
 

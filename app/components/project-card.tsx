@@ -8,7 +8,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ data }: ProjectCardProps) => {
   return (
-    <article className="bg-gray-100 dark:bg-gray-900/30 w-full md:w-[20rem] rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+    <article className="bg-gray-100 dark:bg-gray-900/30 w-full h-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
       <Image
         src={data.image}
         alt={data.name}

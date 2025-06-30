@@ -14,7 +14,7 @@ type IntroSectionProps = {
 const IntroSection = ({ myData, data }: IntroSectionProps) => {
   return (
     <PortfolioSection id="#home">
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mb-6 sm:mb-8">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -25,10 +25,10 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
               alt={"Thanoraj Portrait"}
               width={192}
               height={192}
-              className="h-40 w-40 object-cover rounded-full shadow-xl"></Image>
+              className="h-32 w-32 sm:h-40 sm:w-40 object-cover rounded-full shadow-xl"></Image>
           </motion.div>
           <motion.span
-            className="absolute text-4xl bottom-2 right-2"
+            className="absolute text-2xl sm:text-4xl bottom-1 right-1 sm:bottom-2 sm:right-2"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -42,11 +42,11 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
         </div>
       </div>
       <motion.h1
-        className="font-medium text-2xl"
+        className="font-medium text-xl sm:text-2xl px-4 sm:px-0"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}>
-        <p className="font-bold text-3xl my-8">{data.p1}</p>
-        <p>
+        <p className="font-bold text-2xl sm:text-3xl my-6 sm:my-8">{data.p1}</p>
+        <p className="text-center leading-relaxed">
           {data.p2}
           <span className="font-bold">{data.p3}</span>
           {data.p4}
@@ -59,8 +59,8 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="flex flex-col sm:flex-row items-center gap-5 justify-center mt-5">
-        <Link href={"#contact"} className="group primary-button">
+        className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 justify-center mt-6 sm:mt-8 px-4 sm:px-0 w-full">
+        <Link href={"#contact"} className="group primary-button w-full sm:w-auto">
           Contact Me{" "}
           <BsArrowRight className="opacity-80 group-hover:translate-x-1 transition" />
         </Link>
@@ -69,24 +69,26 @@ const IntroSection = ({ myData, data }: IntroSectionProps) => {
           download={true}
           target="_blank"
           rel="noopener noreferrer"
-          className="group px-7 py-3 secondary-button">
+          className="group px-7 py-3 secondary-button w-full sm:w-auto">
           Download CV
           <HiDownload className="opacity-80 group-hover:translate-x-1 transition" />
         </a>
-        <a
-          href="https://www.linkedin.com/in/muthulingamthanoraj/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="secondary-button !p-4">
-          <BsLinkedin />
-        </a>
-        <a
-          href="https://github.com/Thanoraj"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="secondary-button !p-4">
-          <BsGithub />
-        </a>
+        <div className="flex gap-3 sm:gap-2 mt-2 sm:mt-0">
+          <a
+            href="https://www.linkedin.com/in/muthulingamthanoraj/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="secondary-button !p-3 sm:!p-4">
+            <BsLinkedin className="text-lg sm:text-base" />
+          </a>
+          <a
+            href="https://github.com/Thanoraj"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="secondary-button !p-3 sm:!p-4">
+            <BsGithub className="text-lg sm:text-base" />
+          </a>
+        </div>
       </motion.div>
     </PortfolioSection>
   );

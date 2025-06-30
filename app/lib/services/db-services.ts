@@ -2,22 +2,30 @@
 
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 
-import app from "../configs/init-db";
+import { getFirebaseApp } from "../configs/init-db";
 
+const app = getFirebaseApp();
 console.log(app);
 
-const db = getFirestore();
+const db = app ? getFirestore(app) : null;
 
-export const getMyInfo = async (): Promise<
-  Record<string, Record<string, unknown>>
-> => {
-  const sections: Record<string, Record<string, unknown>> = {};
-  const querySnapshot = await getDocs(collection(db, "my-info"));
-  querySnapshot.forEach((doc) => {
-    sections[`${doc.id}`] = doc.data();
-  });
+export const getMyInfo = async () => {
+  if (!db) {
+    console.error("Firebase not initialized");
+    return [];
+  }
+  
+  try {
+    const querySnapshot = await getDocs(collection(db, "my-info"));
+    const documents: unknown[] = [];
 
-  console.log(sections);
+    querySnapshot.forEach((doc) => {
+      documents.push({ id: doc.id, data: doc.data() });
+    });
 
-  return sections;
+    return documents;
+  } catch (error) {
+    console.error("Error fetching documents:", error);
+    return [];
+  }
 };

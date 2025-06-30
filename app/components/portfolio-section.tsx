@@ -55,7 +55,7 @@ const PortfolioSection = ({
       ref={sectionRef}
       id={id.replace("#", "")}
       className={clsx(
-        `min-h-screen flex items-center flex-col justify-center text-center`,
+        `min-h-screen flex items-center flex-col justify-center text-center px-4 sm:px-6 lg:px-8`,
         className
       )}
       style={{ maxWidth: maxWidth }}>

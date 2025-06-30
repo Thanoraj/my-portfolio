@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 // @ts-ignore: No type definition
 import { Resend } from "resend";
 
-// Initialize Resend only if API key is available
+// Initialize Resend only when needed and if API key is available
 const getResendClient = () => {
   const apiKey = process.env.RESEND_API_KEY;
   
@@ -26,6 +26,7 @@ export const sendResendEmail = async (
   try {
     console.log("Attempting to send email to:", email);
 
+    // Only create Resend client when actually sending email
     const resend = getResendClient();
 
     const result = await resend.emails.send({
